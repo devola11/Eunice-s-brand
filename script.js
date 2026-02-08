@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const enquiry = contactForm.querySelector('select').value;
         const message = contactForm.querySelector('textarea').value;
 
-        const waUrl = `https://wa.me/27000000000?text=${encodeURIComponent(`Hi Eunice! My name is ${name}.\n\nEnquiry: ${enquiry}\nMessage: ${message}\n\nPhone: ${phone}`)}`;
+        const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nMy name is ${name}.\nEnquiry: ${enquiry}\nMessage: ${message}\n\nPhone: ${phone}`)}`;
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
@@ -163,12 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ===== Quick View (placeholder) =====
+// ===== Quick View =====
 function openQuickView(btn) {
     const card = btn.closest('.product-card');
     const name = card.querySelector('.product-info h3').textContent;
-    const price = card.querySelector('.product-price').textContent;
 
-    const message = `${name} - ${price}\n\nMessage us on WhatsApp to order!`;
-    alert(message);
+    const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nI'd like to enquire about: ${name}`)}`;
+    window.open(waUrl, '_blank');
 }
