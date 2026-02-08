@@ -151,6 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
 
+    // ===== Dynamic Copyright Year =====
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     // ===== Staggered reveal for grids =====
     const staggerContainers = document.querySelectorAll('.product-grid, .nail-services-grid, .insta-grid');
 
