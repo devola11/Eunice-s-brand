@@ -60,11 +60,12 @@
     <meta name="geo.position" content="-25.7479;28.2293" />
     <meta name="ICBM" content="-25.7479, 28.2293" />
 
-    <!-- Security Headers -->
+    <!-- Security Headers (meta-compatible only) -->
+    <!-- NOTE: X-Frame-Options and frame-ancestors must be set via HTTP headers on your server/host -->
+    <!-- e.g., Netlify _headers, Vercel vercel.json, or Apache .htaccess -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
 
     <!-- Theme & Favicon -->
