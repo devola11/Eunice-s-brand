@@ -139,16 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    // ===== Input Sanitizer (prevent XSS/injection) =====
+    function sanitize(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML.trim().substring(0, 500);
+    }
+
     // ===== Contact Form Handler =====
     const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const phone = contactForm.querySelector('input[type="tel"]').value;
-        const enquiry = contactForm.querySelector('select').value;
-        const message = contactForm.querySelector('textarea').value;
+        const name = sanitize(contactForm.querySelector('input[type="text"]').value);
+        const phone = sanitize(contactForm.querySelector('input[type="tel"]').value);
+        const enquiry = sanitize(contactForm.querySelector('select').value);
+        const message = sanitize(contactForm.querySelector('textarea').value);
+
+        // Validate phone has only digits, spaces, +, -
+        if (!/^[\d\s+\-()]+$/.test(phone)) {
+            alert('Please enter a valid phone number.');
+            return;
+        }
 
         const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nMy name is ${name}.\nEnquiry: ${enquiry}\nMessage: ${message}\n\nPhone: ${phone}`)}`;
 
@@ -158,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.background = '#25D366';
 
         setTimeout(() => {
-            window.open(waUrl, '_blank');
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
             submitBtn.textContent = 'Message Sent!';
             setTimeout(() => {
                 submitBtn.textContent = originalText;
@@ -189,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = e.target.closest('.quick-view-btn');
             if (!btn) return;
             const card = btn.closest('.product-card');
-            const name = card.querySelector('.product-info h3').textContent;
-            const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nI'd like to enquire about: ${name}`)}`;
-            window.open(waUrl, '_blank');
+            const productName = sanitize(card.querySelector('.product-info h3').textContent);
+            const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nI'd like to enquire about: ${productName}`)}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
         });
     }
 
