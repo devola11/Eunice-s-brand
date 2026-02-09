@@ -1411,6 +1411,13 @@ ul { list-style: none; }
         right: 85px;
         bottom: 20px;
     }
+
+    /* Hide floating buttons when mobile menu is open (body overflow:hidden) */
+    body[style*="overflow: hidden"] .whatsapp-float,
+    body[style*="overflow: hidden"] .back-to-top {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
 }
 
 @media (max-width: 480px) {
