@@ -60,6 +60,13 @@
     <meta name="geo.position" content="-25.7479;28.2293" />
     <meta name="ICBM" content="-25.7479, 28.2293" />
 
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
     <!-- Theme & Favicon -->
     <meta name="theme-color" content="#8b1a4a" />
     <meta name="msapplication-TileColor" content="#8b1a4a" />
@@ -570,7 +577,7 @@
             href="https://wa.me/27644855192?text=Hello%20Eunice%2C%20I'd%20like%20to%20book%20a%20nail%20appointment"
             class="btn btn-primary"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             >Book via WhatsApp</a
           >
         </div>
@@ -681,7 +688,7 @@
                 <span class="contact-icon">&#128231;</span>
                 <div>
                   <strong>Email</strong>
-                  <p>Euniceessentials192@gmail.com</p>
+                  <p>Euniceessentials192&#64;gmail&#46;com</p>
                 </div>
               </div>
               <div class="contact-item">
@@ -694,13 +701,13 @@
             </div>
           </div>
           <div class="contact-form-wrapper">
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" autocomplete="off">
               <h3>Send a Message</h3>
               <div class="form-group">
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" placeholder="Your Name" required maxlength="100" />
               </div>
               <div class="form-group">
-                <input type="tel" placeholder="Phone Number" required />
+                <input type="tel" placeholder="Phone Number" required maxlength="20" pattern="[\d\s+\-()]+" />
               </div>
               <div class="form-group">
                 <select required>
@@ -715,6 +722,7 @@
                   placeholder="Your Message"
                   rows="4"
                   required
+                  maxlength="1000"
                 ></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-full">
@@ -743,7 +751,7 @@
               nail tech services in Pretoria, South Africa.
             </p>
             <div class="social-links">
-              <a href="https://www.instagram.com/eunice.essential?igsh=dHVtM2FqYXdwMzR3" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <a href="https://www.instagram.com/eunice.essential?igsh=dHVtM2FqYXdwMzR3" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg
                   width="20"
                   height="20"
@@ -755,7 +763,7 @@
                   />
                 </svg>
               </a>
-              <a href="https://www.facebook.com/share/1BwhwMj8UA/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+              <a href="https://www.facebook.com/share/1BwhwMj8UA/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                 <svg
                   width="20"
                   height="20"
@@ -772,7 +780,7 @@
                 class="social-link"
                 aria-label="WhatsApp"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 <svg
                   width="20"
@@ -812,7 +820,7 @@
             <ul>
               <li>Pretoria, South Africa</li>
               <li>+27 64 485 5192</li>
-              <li>Euniceessentials192@gmail.com</li>
+              <li>Euniceessentials192&#64;gmail&#46;com</li>
               <li>Mon - Sat: 9AM - 6PM</li>
             </ul>
           </div>
@@ -829,7 +837,7 @@
       href="https://wa.me/27644855192?text=Hello%20Eunice%2C%20I'm%20interested%20in%20your%20products"
       class="whatsapp-float"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
