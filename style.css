@@ -29,6 +29,38 @@
     --font-body: 'Poppins', 'Segoe UI', sans-serif;
 }
 
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 10000;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* ===== RESET & BASE ===== */
 *,
 *::before,
@@ -56,6 +88,17 @@ a {
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
+}
+
+/* Focus-visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 img {
@@ -552,12 +595,12 @@ ul { list-style: none; }
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
     box-shadow: var(--shadow-sm);
-    will-change: transform;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(139, 26, 74, 0.18);
+    will-change: transform;
 }
 
 .product-image {
@@ -672,13 +715,13 @@ ul { list-style: none; }
     background: var(--white);
     border: 1px solid var(--border);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.3s ease;
-    will-change: transform;
 }
 
 .nail-service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(139, 26, 74, 0.15);
     border-color: transparent;
+    will-change: transform;
 }
 
 .nail-image {
