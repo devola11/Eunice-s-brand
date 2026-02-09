@@ -143,13 +143,17 @@
       }
     </script>
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- Preconnect (before any external requests) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.me" />
+
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -258,7 +262,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-1.jpeg" alt="Waist Trainer Vest - Eunice's Essentials" loading="lazy" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -274,7 +278,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-2.jpeg" alt="Printed Pyjama Sets - Eunice's Essentials" loading="lazy" />
               <div class="product-badge hot">Hot</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -289,7 +293,7 @@
             <div class="product-image">
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-3.jpeg" alt="Cotton Panties Collection - Eunice's Essentials" loading="lazy" />
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -305,7 +309,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-4.jpeg" alt="Satin Nightwear Set - Red - Eunice's Essentials" loading="lazy" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -320,7 +324,7 @@
             <div class="product-image">
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-5.jpeg" alt="Satin Nightwear Set - Navy - Eunice's Essentials" loading="lazy" />
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -335,7 +339,7 @@
             <div class="product-image">
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-6.jpeg" alt="Satin Nightwear Set - Silver - Eunice's Essentials" loading="lazy" />
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -351,7 +355,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-7.jpeg" alt="Lace Panties Collection - Eunice's Essentials" loading="lazy" />
               <div class="product-badge hot">Hot</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -366,7 +370,7 @@
             <div class="product-image">
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-8.jpeg" alt="Lace Bra Collection - Eunice's Essentials" loading="lazy" />
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -381,7 +385,7 @@
             <div class="product-image">
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-9.jpeg" alt="Bustier Crop Tops - Eunice's Essentials" loading="lazy" />
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -397,7 +401,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-10.jpeg" alt="Cozy Pyjama Set - Eunice's Essentials" loading="lazy" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -413,7 +417,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-11.jpeg" alt="Waist Trainer Shapewear - Eunice's Essentials" loading="lazy" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -429,7 +433,7 @@
               <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-12.jpeg" alt="Satin Nightwear 5-Piece Set - Black - Eunice's Essentials" loading="lazy" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
-                <button class="quick-view-btn" onclick="openQuickView(this)">
+                <button class="quick-view-btn">
                   Enquire Now
                 </button>
               </div>
@@ -850,6 +854,5 @@
       </svg>
     </button>
 
-    <script src="script.js"></script>
   </body>
 </html>

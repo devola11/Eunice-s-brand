@@ -19,11 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===== Throttle utility =====
+    function throttle(fn, wait) {
+        let last = 0;
+        return function () {
+            const now = Date.now();
+            if (now - last >= wait) {
+                last = now;
+                fn();
+            }
+        };
+    }
+
     // ===== Navbar Scroll Effect =====
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('backToTop');
 
-    window.addEventListener('scroll', () => {
+    function onScroll() {
         const scrollY = window.scrollY;
 
         if (scrollY > 50) {
@@ -39,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateActiveNav();
-    });
+    }
+
+    window.addEventListener('scroll', throttle(onScroll, 100), { passive: true });
 
     // Back to top click
     backToTop.addEventListener('click', () => {
@@ -68,12 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== Product Filter =====
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterTabs = document.querySelector('.filter-tabs');
     const productCards = document.querySelectorAll('.product-card');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
+    if (filterTabs) {
+        filterTabs.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+
+            filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
@@ -99,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-    });
+    }
 
     // ===== Scroll Reveal Animation =====
     const revealElements = document.querySelectorAll(
@@ -165,13 +182,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===== Event delegation for Quick View buttons =====
+    const productGrid = document.querySelector('.product-grid');
+    if (productGrid) {
+        productGrid.addEventListener('click', (e) => {
+            const btn = e.target.closest('.quick-view-btn');
+            if (!btn) return;
+            const card = btn.closest('.product-card');
+            const name = card.querySelector('.product-info h3').textContent;
+            const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nI'd like to enquire about: ${name}`)}`;
+            window.open(waUrl, '_blank');
+        });
+    }
+
 });
-
-// ===== Quick View =====
-function openQuickView(btn) {
-    const card = btn.closest('.product-card');
-    const name = card.querySelector('.product-info h3').textContent;
-
-    const waUrl = `https://wa.me/27644855192?text=${encodeURIComponent(`Hello Eunice, I'm interested in your products.\n\nI'd like to enquire about: ${name}`)}`;
-    window.open(waUrl, '_blank');
-}

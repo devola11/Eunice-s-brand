@@ -489,6 +489,14 @@ ul { list-style: none; }
 }
 
 /* ===== COLLECTION SECTION ===== */
+.collection,
+.nail-tech,
+.instagram-section,
+.contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
+
 .collection {
     background: var(--cream);
 }
@@ -538,6 +546,7 @@ ul { list-style: none; }
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
     box-shadow: var(--shadow-sm);
+    will-change: transform;
 }
 
 .product-card:hover {
@@ -657,6 +666,7 @@ ul { list-style: none; }
     background: var(--white);
     border: 1px solid var(--border);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    will-change: transform;
 }
 
 .nail-service-card:hover {
