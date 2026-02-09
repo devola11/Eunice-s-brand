@@ -4,19 +4,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Mobile Navigation =====
     const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
     const navLinks = document.getElementById('navLinks');
 
+    // Create overlay for closing menu on background tap
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'nav-menu-overlay';
+    document.body.appendChild(menuOverlay);
+
+    function closeMenu() {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('open');
+        menuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        navToggle.classList.add('active');
+        navMenu.classList.add('open');
+        menuOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
     navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('open');
+        if (navMenu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
+    menuOverlay.addEventListener('click', closeMenu);
+
     // Close nav on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('open');
-        });
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
     });
 
     // ===== Throttle utility =====
