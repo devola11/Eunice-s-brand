@@ -64,7 +64,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
 
     <!-- Theme & Favicon -->
@@ -95,7 +95,7 @@
           "longitude": "28.2293"
         },
         "openingHours": "Mo-Sa 09:00-18:00",
-        "priceRange": "Affordable",
+        "priceRange": "$$",
         "image": "https://www.eunicesessentials.co.za/images/og-image.jpg",
         "sameAs": [
           "https://www.instagram.com/eunice.essential?igsh=dHVtM2FqYXdwMzR3",
@@ -159,10 +159,18 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    </noscript>
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Skip to main content for keyboard users -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -177,6 +185,8 @@
           class="nav-toggle"
           id="navToggle"
           aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="navMenu"
         >
           <span></span>
           <span></span>
@@ -187,7 +197,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#collection">Collection</a></li>
             <li><a href="#nails">Nail Tech</a></li>
-            <li><a href="#about">Gallery</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div class="nav-menu-footer">
@@ -287,7 +297,7 @@
         <div class="product-grid">
           <div class="product-card" data-category="casual">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-1.jpeg" alt="Waist Trainer Vest - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-1.jpeg" alt="Waist Trainer Vest - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -303,7 +313,7 @@
 
           <div class="product-card" data-category="casual">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-2.jpeg" alt="Printed Pyjama Sets - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-2.jpeg" alt="Printed Pyjama Sets - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge hot">Hot</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -319,7 +329,7 @@
 
           <div class="product-card" data-category="lingerie">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-3.jpeg" alt="Cotton Panties Collection - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-3.jpeg" alt="Cotton Panties Collection - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-overlay">
                 <button class="quick-view-btn">
                   Enquire Now
@@ -334,7 +344,7 @@
 
           <div class="product-card" data-category="nightwear">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-4.jpeg" alt="Satin Nightwear Set - Red - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-4.jpeg" alt="Satin Nightwear Set - Red - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -350,7 +360,7 @@
 
           <div class="product-card" data-category="nightwear">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-5.jpeg" alt="Satin Nightwear Set - Navy - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-5.jpeg" alt="Satin Nightwear Set - Navy - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-overlay">
                 <button class="quick-view-btn">
                   Enquire Now
@@ -365,7 +375,7 @@
 
           <div class="product-card" data-category="nightwear">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-6.jpeg" alt="Satin Nightwear Set - Silver - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-6.jpeg" alt="Satin Nightwear Set - Silver - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-overlay">
                 <button class="quick-view-btn">
                   Enquire Now
@@ -380,7 +390,7 @@
 
           <div class="product-card" data-category="lingerie">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-7.jpeg" alt="Lace Panties Collection - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-7.jpeg" alt="Lace Panties Collection - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge hot">Hot</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -396,7 +406,7 @@
 
           <div class="product-card" data-category="lingerie">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-8.jpeg" alt="Lace Bra Collection - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-8.jpeg" alt="Lace Bra Collection - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-overlay">
                 <button class="quick-view-btn">
                   Enquire Now
@@ -411,7 +421,7 @@
 
           <div class="product-card" data-category="casual">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-9.jpeg" alt="Bustier Crop Tops - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-9.jpeg" alt="Bustier Crop Tops - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-overlay">
                 <button class="quick-view-btn">
                   Enquire Now
@@ -426,7 +436,7 @@
 
           <div class="product-card" data-category="casual">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-10.jpeg" alt="Cozy Pyjama Set - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-10.jpeg" alt="Cozy Pyjama Set - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -442,7 +452,7 @@
 
           <div class="product-card" data-category="lingerie">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-11.jpeg" alt="Waist Trainer Shapewear - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-11.jpeg" alt="Waist Trainer Shapewear - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -458,7 +468,7 @@
 
           <div class="product-card" data-category="nightwear">
             <div class="product-image">
-              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-12.jpeg" alt="Satin Nightwear 5-Piece Set - Black - Eunice's Essentials" loading="lazy" />
+              <img width="600" height="800" src="images/eunice-clothing/eunice-clothing-image-12.jpeg" alt="Satin Nightwear 5-Piece Set - Black - Eunice's Essentials" loading="lazy" decoding="async" />
               <div class="product-badge">New</div>
               <div class="product-overlay">
                 <button class="quick-view-btn">
@@ -491,7 +501,7 @@
         <div class="nail-services-grid">
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-1.jpeg" alt="Gel Manicure - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-1.jpeg" alt="Gel Manicure - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Gel Manicure</h3>
@@ -508,7 +518,7 @@
 
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-2.jpeg" alt="Nail Art & Design - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-2.jpeg" alt="Nail Art & Design - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Nail Art & Design</h3>
@@ -525,7 +535,7 @@
 
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-3.jpeg" alt="Pedicure Spa - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-3.jpeg" alt="Pedicure Spa - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Pedicure Spa</h3>
@@ -542,7 +552,7 @@
 
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-9.jpg" alt="Acrylic Extensions - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-9.jpg" alt="Acrylic Extensions - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Acrylic Extensions</h3>
@@ -559,7 +569,7 @@
 
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-10.jpg" alt="Luxury Full Set - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-10.jpg" alt="Luxury Full Set - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Luxury Full Set</h3>
@@ -576,7 +586,7 @@
 
           <div class="nail-service-card">
             <div class="nail-image">
-              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-6.jpg" alt="Nail Maintenance - Eunice's Essentials" loading="lazy" />
+              <img width="800" height="500" src="images/eunice-nail/eunice-nail-image-6.jpg" alt="Nail Maintenance - Eunice's Essentials" loading="lazy" decoding="async" />
             </div>
             <div class="nail-info">
               <h3>Nail Maintenance</h3>
@@ -606,7 +616,7 @@
     </section>
 
     <!-- Instagram Gallery -->
-    <section class="section instagram-section" id="about">
+    <section class="section instagram-section" id="gallery">
       <div class="container">
         <div class="section-header">
           <p class="section-subtitle">Follow Us</p>
@@ -619,55 +629,55 @@
         </div>
         <div class="insta-grid">
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-4.jpeg" alt="Gallery - Satin Set" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-4.jpeg" alt="Gallery - Satin Set" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-1.jpeg" alt="Gallery - Red Nails" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-1.jpeg" alt="Gallery - Red Nails" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-5.jpeg" alt="Gallery - Navy Nightwear" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-5.jpeg" alt="Gallery - Navy Nightwear" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-11.jpg" alt="Gallery - Nail Art" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-11.jpg" alt="Gallery - Nail Art" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item large">
-            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-5.jpg" alt="Gallery - Pedicure Spa" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-5.jpg" alt="Gallery - Pedicure Spa" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-9.jpeg" alt="Gallery - Bustier Tops" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-9.jpeg" alt="Gallery - Bustier Tops" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-2.jpeg" alt="Gallery - Leopard Nails" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-2.jpeg" alt="Gallery - Leopard Nails" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-6.jpeg" alt="Gallery - Silver Nightwear" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-clothing/eunice-clothing-image-6.jpeg" alt="Gallery - Silver Nightwear" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
           </div>
           <div class="insta-item">
-            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-10.jpg" alt="Gallery - Green Nail Art" loading="lazy" />
+            <img width="400" height="400" src="images/eunice-nail/eunice-nail-image-10.jpg" alt="Gallery - Green Nail Art" loading="lazy" decoding="async" />
             <div class="insta-overlay">
               <span class="insta-icon">&#128247;</span>
             </div>
@@ -725,13 +735,16 @@
             <form class="contact-form" id="contactForm" autocomplete="off">
               <h3>Send a Message</h3>
               <div class="form-group">
-                <input type="text" placeholder="Your Name" required maxlength="100" />
+                <label for="contactName" class="sr-only">Your Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Your Name" required maxlength="100" />
               </div>
               <div class="form-group">
-                <input type="tel" placeholder="Phone Number" required maxlength="20" pattern="[\d\s+\-()]+" />
+                <label for="contactPhone" class="sr-only">Phone Number</label>
+                <input type="tel" id="contactPhone" name="phone" placeholder="Phone Number" required maxlength="20" pattern="[\d\s+\-()]+" />
               </div>
               <div class="form-group">
-                <select required>
+                <label for="contactEnquiry" class="sr-only">Enquiry Type</label>
+                <select id="contactEnquiry" name="enquiry" required>
                   <option value="" disabled selected>Enquiry Type</option>
                   <option value="clothing">Clothing Enquiry</option>
                   <option value="nails">Nail Appointment</option>
@@ -739,7 +752,10 @@
                 </select>
               </div>
               <div class="form-group">
+                <label for="contactMessage" class="sr-only">Your Message</label>
                 <textarea
+                  id="contactMessage"
+                  name="message"
                   placeholder="Your Message"
                   rows="4"
                   required
@@ -822,7 +838,7 @@
               <li><a href="#home">Home</a></li>
               <li><a href="#collection">Collection</a></li>
               <li><a href="#nails">Nail Services</a></li>
-              <li><a href="#about">Gallery</a></li>
+              <li><a href="#gallery">Gallery</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -861,7 +877,7 @@
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
     >
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
         />

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeMenu() {
         navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
         navMenu.classList.remove('open');
         menuOverlay.classList.remove('open');
         document.body.style.overflow = '';
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openMenu() {
         navToggle.classList.add('active');
+        navToggle.setAttribute('aria-expanded', 'true');
         navMenu.classList.add('open');
         menuOverlay.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -35,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     menuOverlay.addEventListener('click', closeMenu);
+
+    // Close nav on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+            closeMenu();
+            navToggle.focus();
+        }
+    });
 
     // Close nav on link click
     navMenu.querySelectorAll('a').forEach(link => {
@@ -174,10 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = sanitize(contactForm.querySelector('input[type="text"]').value);
-        const phone = sanitize(contactForm.querySelector('input[type="tel"]').value);
-        const enquiry = sanitize(contactForm.querySelector('select').value);
-        const message = sanitize(contactForm.querySelector('textarea').value);
+        const name = sanitize(contactForm.elements.name.value);
+        const phone = sanitize(contactForm.elements.phone.value);
+        const enquiry = contactForm.elements.enquiry.value;
+        const message = sanitize(contactForm.elements.message.value);
 
         // Validate phone has only digits, spaces, +, -
         if (!/^[\d\s+\-()]+$/.test(phone)) {
