@@ -943,6 +943,11 @@ ul { list-style: none; }
     color: var(--text-dark);
     background: var(--white);
     transition: var(--transition);
+}
+
+.form-group input:focus:not(:focus-visible),
+.form-group select:focus:not(:focus-visible),
+.form-group textarea:focus:not(:focus-visible) {
     outline: none;
 }
 

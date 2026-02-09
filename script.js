@@ -2,6 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ===== Non-render-blocking Google Fonts swap =====
+    const fontLink = document.getElementById('googleFonts');
+    if (fontLink) fontLink.media = 'all';
+
     // ===== Mobile Navigation =====
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
