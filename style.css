@@ -1230,6 +1230,7 @@ ul { list-style: none; }
         left: 0;
         right: 0;
         height: calc(100vh - 75px);
+        height: calc(100dvh - 75px);
         background: var(--white);
         display: flex;
         flex-direction: column;
@@ -1241,6 +1242,7 @@ ul { list-style: none; }
                     visibility 0.3s ease;
         z-index: 999;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-menu.open {
@@ -1301,7 +1303,8 @@ ul { list-style: none; }
     .nav-menu-footer {
         display: block;
         margin-top: auto;
-        padding: 24px 28px 32px;
+        padding: 24px 28px calc(32px + env(safe-area-inset-bottom, 0px));
+        flex-shrink: 0;
     }
 
     .nav-menu-overlay {
@@ -1449,6 +1452,7 @@ ul { list-style: none; }
     .nav-menu {
         top: 65px;
         height: calc(100vh - 65px);
+        height: calc(100dvh - 65px);
     }
 
     .logo-icon {
