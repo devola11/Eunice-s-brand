@@ -4,7 +4,7 @@ A modern, responsive static website for **Eunice's Essentials** — a ladies clo
 
 ## Live Site
 
-[www.eunicesessentials.co.za](https://www.eunicesessentials.co.za/)
+[www.eunice-essentials.com](https://www.eunice-essentials.com/)
 
 ## Features
 
@@ -26,7 +26,8 @@ A modern, responsive static website for **Eunice's Essentials** — a ladies clo
 | CSS | Custom properties, CSS Grid, Flexbox, `clamp()` |
 | JavaScript | Vanilla JS (no frameworks or dependencies) |
 | Fonts | Google Fonts (Playfair Display, Poppins) — non-render-blocking |
-| Hosting | Netlify (static deployment) |
+| Hosting | Whogohost |
+| Domain | eunice-essentials.com (Whogohost) |
 
 ## Project Structure
 
@@ -37,7 +38,7 @@ A modern, responsive static website for **Eunice's Essentials** — a ladies clo
 ├── style.css         # All styles (responsive + reduced motion)
 ├── script.js         # Navigation, filters, animations, form handler
 ├── favicon.svg       # SVG favicon
-├── _headers          # Netlify security headers
+├── _headers          # Server security headers
 ├── robots.txt        # Crawl rules
 ├── sitemap.xml       # Sitemap for search engines
 └── images/
@@ -98,9 +99,9 @@ python -m http.server 8080
 
 ## Deployment
 
-The site is deployed on **Netlify**. Push to `master` to trigger a deploy.
+The site is hosted on **Whogohost** with the domain **eunice-essentials.com**.
 
-Security headers are configured via the `_headers` file (Netlify-specific).
+Security headers are configured via the `_headers` file and in-page `<meta>` tags.
 
 ## Contact
 

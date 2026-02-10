@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.eunicesessentials.co.za/sitemap.xml
+Sitemap: https://www.eunice-essentials.com/sitemap.xml
