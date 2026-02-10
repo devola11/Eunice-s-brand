@@ -204,13 +204,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Redirecting to WhatsApp...';
         submitBtn.style.background = '#25D366';
+        submitBtn.disabled = true;
 
         setTimeout(() => {
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            const popup = window.open(waUrl, '_blank', 'noopener,noreferrer');
+            if (!popup) {
+                submitBtn.textContent = 'Popup blocked — tap to open';
+                submitBtn.style.background = '#e74c3c';
+                submitBtn.disabled = false;
+                submitBtn.onclick = () => {
+                    window.open(waUrl, '_blank', 'noopener,noreferrer');
+                    submitBtn.onclick = null;
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    contactForm.reset();
+                };
+                return;
+            }
             submitBtn.textContent = 'Message Sent!';
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.style.background = '';
+                submitBtn.disabled = false;
                 contactForm.reset();
             }, 2000);
         }, 500);
